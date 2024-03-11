@@ -5,10 +5,11 @@
 //  Created by jun wook on 2023/07/15.
 //
 
-#if canImport(SwiftUI) && DEBUG
+#if canImport(SwiftUI) && canImport(UIKit) && DEBUG
 import SwiftUI
 import UIKit
 
+@available(iOS 13.0, *)
 public struct UIViewControllerPreview<ViewController: UIViewController>: UIViewControllerRepresentable {
     public let viewController: ViewController
     
