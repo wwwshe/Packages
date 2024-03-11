@@ -16,9 +16,6 @@
 ## LocalData
 #### UserDefaults, KeyChain 관련 패키지
 
-## Network
-#### 네트워킹 관련 패키지
-
 ## Preview
 #### UIKit용 Preview 패키지
 
