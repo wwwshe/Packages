@@ -14,12 +14,16 @@ public class Jailbroken {
     /// 탈옥체크
     /// - Returns: true 는 탈옥 false는 정상
     public var isJailbroken: Bool {
+        #if targetEnvironment(simulator)
+        return false
+        #else
         return checkGeneralPath()
         || checkCydia()
         || checkTestFileWrite()
         || checkFridaPort()
         || checkFridaInstall()
         || checkSandBoxFork()
+        #endif
     }
     
     /// 탈옥된 장치에서 일반적으로 발견되는 파일이나 디렉토리 확인

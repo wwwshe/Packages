@@ -5,6 +5,9 @@ import PackageDescription
 
 let package = Package(
     name: "Packages",
+    platforms: [
+        .iOS(.v13)
+    ],
     products: [
         // Products define the executables and libraries a package produces, and make them visible to other packages.
         .library(
@@ -38,12 +41,6 @@ let package = Package(
             ]
         ),
         .library(
-            name: "Network",
-            targets: [
-                "Network"
-            ]
-        ),
-        .library(
             name: "Preview",
             targets: [
                 "Preview"
@@ -66,18 +63,6 @@ let package = Package(
             url: "https://github.com/SnapKit/SnapKit.git",
             exact: "5.0.1"
         ),
-        .package(
-            url: "https://github.com/ReactiveX/RxSwift.git",
-            exact: "6.6.0"
-        ),
-        .package(
-            url: "https://github.com/pixeldock/RxAppState.git",
-            exact: "1.7.0"
-        ),
-        .package(
-            url: "https://github.com/devxoul/Then",
-            exact: "3.0.0"
-        )
     ],
     targets: [
         // Targets are the basic building blocks of a package. A target can define a module or a test suite.
@@ -103,6 +88,7 @@ let package = Package(
         .target(
             name: "Extension",
             dependencies: [
+                "SnapKit"
             ],
             path: "Extension"
         ),
@@ -114,32 +100,10 @@ let package = Package(
             path: "LocalData"
         ),
         .target(
-            name: "Network",
-            dependencies: [
-                "Shared",
-                "DataUtility"
-            ],
-            path: "Network",
-            resources: [
-                .process("Sample")
-            ]
-        ),
-        .target(
             name: "Preview",
             dependencies: [
             ],
             path: "Preview"
-        ),
-        .target(
-            name: "Shared",
-            dependencies: [
-                "SnapKit",
-                "Then",
-                "RxSwift",
-                "RxAppState",
-                .product(name: "RxCocoa", package: "RxSwift")
-            ],
-            path: "Shared"
         ),
         .target(
             name: "UIUtility",

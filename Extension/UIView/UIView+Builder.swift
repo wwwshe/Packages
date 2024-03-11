@@ -11,7 +11,7 @@ import UIKit
 public extension UIView {
     @resultBuilder
     struct AddSubviewBuilder {
-        static func buildBlock(_ components: UIView...) -> [UIView] {
+        public static func buildBlock(_ components: UIView...) -> [UIView] {
             components
         }
     }

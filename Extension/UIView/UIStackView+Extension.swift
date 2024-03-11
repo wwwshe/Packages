@@ -20,7 +20,7 @@ public extension UIStackView {
 public extension UIStackView {
     @resultBuilder
     struct AddArrangeViewBuilder {
-        static func buildBlock(_ components: UIView...) -> [UIView] {
+        public static func buildBlock(_ components: UIView...) -> [UIView] {
             components
         }
     }
