@@ -12,3 +12,10 @@ public extension String {
         return NSLocalizedString(self, comment: "")
     }
 }
+
+@available(iOS 15, *)
+public extension String {
+    var localizeWidthCatalog: String {
+        return String(localized: String.LocalizationValue(self))
+    }
+}
