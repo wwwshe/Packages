@@ -2,7 +2,6 @@
 //  UITableViewCell+Extension.swift
 //
 //  Created by jjw-MAC-PC on 2020/06/26.
-//  Copyright © 2020 Coinone. All rights reserved.
 //
 
 import Foundation

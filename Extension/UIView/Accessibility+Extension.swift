@@ -3,7 +3,6 @@
 //  
 //
 //  Created by jjw-MAC-PC on 2021/09/29.
-//  Copyright © 2021 Coinone. All rights reserved.
 //
 
 import UIKit

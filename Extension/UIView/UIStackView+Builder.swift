@@ -1,8 +1,7 @@
 //
-//  UIStackView+Extension.swift
+//  UIStackView+Builder.swift
 //
 //  Created by jjw-MAC-PC on 2021/11/23.
-//  Copyright © 2021 Coinone. All rights reserved.
 //
 
 import UIKit
@@ -25,7 +24,7 @@ public extension UIStackView {
         }
     }
     
-    func addArrangedSubviews(_ views: () -> [UIView]) {
+    func addArrangedSubviews(@AddArrangeViewBuilder views: () -> [UIView]) {
         views().forEach { view in
             addArrangedSubview(view)
         }

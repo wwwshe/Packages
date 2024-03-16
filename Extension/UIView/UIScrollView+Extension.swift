@@ -2,7 +2,6 @@
 //  ScrollView+Extension.swift
 //
 //  Created by jjw-MAC-PC on 2020/11/03.
-//  Copyright © 2020 Coinone. All rights reserved.
 //
 
 import Foundation

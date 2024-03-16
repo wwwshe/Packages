@@ -2,7 +2,6 @@
 //  WKWebView+Extension.swift
 //
 //  Created by jjw-MAC-PC on 2021/08/25.
-//  Copyright © 2021 Coinone. All rights reserved.
 //
 import WebKit
 

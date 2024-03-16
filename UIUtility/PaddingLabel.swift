@@ -2,7 +2,6 @@
 //  PaddingLabel.swift
 //
 //  Created by jjw-Macbook Pro on 2022/08/24.
-//  Copyright © 2022 Coinone. All rights reserved.
 //
 
 import Foundation

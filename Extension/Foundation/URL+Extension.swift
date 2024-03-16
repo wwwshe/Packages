@@ -2,7 +2,6 @@
 //  URL+Extension.swift
 //
 //  Created by jjw-MAC-PC on 2021/08/23.
-//  Copyright © 2021 Coinone. All rights reserved.
 //
 
 import Foundation
