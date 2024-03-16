@@ -8,6 +8,7 @@ import CommonCrypto
 
 public extension String {
     /// MD5로 암호화
+    #warning("iOS 13이상에서는 MD5 사용 지양")
     func MD5() -> String? {
         let length = Int(CC_MD5_DIGEST_LENGTH)
         var digest = [UInt8](repeating: 0, count: length)
