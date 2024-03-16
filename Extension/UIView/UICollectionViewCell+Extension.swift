@@ -19,4 +19,14 @@ public extension UICollectionViewCell {
         }
         return cell
     }
+    
+    func calculatetCellSize(cellHeight: CGFloat) -> CGSize {
+        let targetSize = CGSize(width: UIView.layoutFittingCompressedSize.width, height: cellHeight)
+        
+        return self.contentView.systemLayoutSizeFitting(
+            targetSize,
+            withHorizontalFittingPriority: .fittingSizeLevel,
+            verticalFittingPriority: .required
+        )
+    }
 }
