@@ -37,7 +37,7 @@
 		<key>Networking.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>12</integer>
+			<integer>6</integer>
 		</dict>
 		<key>Packages-Package.xcscheme_^#shared#^_</key>
 		<dict>
@@ -214,6 +214,11 @@
 			<true/>
 		</dict>
 		<key>Network</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>Networking</key>
 		<dict>
 			<key>primary</key>
 			<true/>
