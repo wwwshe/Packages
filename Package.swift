@@ -51,8 +51,13 @@ let package = Package(
             targets: [
                 "UIUtility"
             ]
+        ),
+        .library(
+            name: "Networking",
+            targets: [
+                "Networking"
+            ]
         )
-        
     ],
     dependencies: [
         .package(
@@ -62,6 +67,10 @@ let package = Package(
         .package(
             url: "https://github.com/SnapKit/SnapKit.git",
             exact: "5.0.1"
+        ),
+        .package(
+            url: "https://github.com/Alamofire/Alamofire",
+            exact: "5.0.0"
         ),
     ],
     targets: [
@@ -110,6 +119,14 @@ let package = Package(
             dependencies: [
             ],
             path: "UIUtility"
+        ),
+        .target(
+            name: "Networking",
+            dependencies: [
+                "Alamofire",
+                "Extension"
+            ],
+            path: "Networking"
         )
     ]
 )
