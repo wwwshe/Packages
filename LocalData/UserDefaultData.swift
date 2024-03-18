@@ -8,9 +8,11 @@
 import Foundation
 
 public struct UserDefaultData {
-    private let userDefault = UserDefaults.standard
+    private let userDefault: UserDefaults 
     
-    public init() {}
+    public init(userDefault: UserDefaults = .standard) {
+        self.userDefault = userDefault
+    }
     
     public func setString(key: String, value: String) {
         userDefault.set(value, forKey: key)
@@ -18,5 +20,14 @@ public struct UserDefaultData {
     
     public func getString(key: String) -> String? {
         return userDefault.string(forKey: key)
+    }
+    
+    
+    public func setInt(key: String, value: Int) {
+        userDefault.set(value, forKey: key)
+    }
+    
+    public func getInt(key: String) -> Int? {
+        return userDefault.integer(forKey: key)
     }
 }
