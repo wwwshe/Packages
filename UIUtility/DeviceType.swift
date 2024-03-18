@@ -1,13 +1,13 @@
 //
 //  DeviceType.swift
-//  
+//
 //
 //  Created by jjw-Macbook Pro on 2023/07/25.
 //
 
 import UIKit
 
-public struct DeviceType {
+public enum DeviceType {
     public static let IS_IPAD = (UI_USER_INTERFACE_IDIOM() == .pad)
     public static let IS_IPHONE = (UI_USER_INTERFACE_IDIOM() == .phone)
     public static let IS_RETINA = UIScreen.main.scale >= 2.0

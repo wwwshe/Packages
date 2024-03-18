@@ -1,6 +1,6 @@
 //
 //  Int+Extension.swift
-//  
+//
 //
 
 import Foundation
@@ -17,13 +17,13 @@ public extension Int {
         }
         return returnValue
     }
-    
+
     var krwString: String {
         let format = krNumberFormatter
         format.numberStyle = .decimal
         return format.string(from: NSNumber(value: self)) ?? "0"
     }
-    
+
     var string: String {
         return String(self)
     }
@@ -33,9 +33,9 @@ public extension UInt64 {
     var krwString: String {
         let format = krNumberFormatter
         format.numberStyle = .decimal
-        return format.string(from: NSNumber.init(value: self)) ?? "0"
+        return format.string(from: NSNumber(value: self)) ?? "0"
     }
-    
+
     var string: String {
         return String(self)
     }
@@ -45,9 +45,9 @@ public extension Int64 {
     var krwString: String {
         let format = krNumberFormatter
         format.numberStyle = .decimal
-        return format.string(from: NSNumber.init(value: self)) ?? "0"
+        return format.string(from: NSNumber(value: self)) ?? "0"
     }
-    
+
     var string: String {
         return String(self)
     }

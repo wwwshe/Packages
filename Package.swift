@@ -6,58 +6,64 @@ import PackageDescription
 let package = Package(
     name: "Packages",
     platforms: [
-        .iOS(.v13)
+        .iOS(.v13),
     ],
     products: [
         // Products define the executables and libraries a package produces, and make them visible to other packages.
         .library(
             name: "Jailbroken",
             targets: [
-                "Jailbroken"
+                "Jailbroken",
             ]
         ),
         .library(
             name: "CommonUI",
             targets: [
-                "CommonUI"
+                "CommonUI",
             ]
         ),
         .library(
             name: "DataUtility",
             targets: [
-                "DataUtility"
+                "DataUtility",
             ]
         ),
         .library(
             name: "Extension",
             targets: [
-                "Extension"
+                "Extension",
             ]
         ),
         .library(
             name: "LocalData",
             targets: [
-                "LocalData"
+                "LocalData",
             ]
         ),
         .library(
             name: "Preview",
             targets: [
-                "Preview"
+                "Preview",
             ]
         ),
         .library(
             name: "UIUtility",
             targets: [
-                "UIUtility"
+                "UIUtility",
             ]
         ),
         .library(
             name: "Networking",
             targets: [
-                "Networking"
+                "Networking",
             ]
-        )
+        ),
+        .library(
+            name: "Zoomable",
+            targets: [
+                "Zoomable",
+            ]
+        ),
     ],
     dependencies: [
         .package(
@@ -97,14 +103,14 @@ let package = Package(
         .target(
             name: "Extension",
             dependencies: [
-                "SnapKit"
+                "SnapKit",
             ],
             path: "Extension"
         ),
         .target(
             name: "LocalData",
             dependencies: [
-                .product(name: "KeychainSwift", package: "keychain-swift")
+                .product(name: "KeychainSwift", package: "keychain-swift"),
             ],
             path: "LocalData"
         ),
@@ -124,9 +130,16 @@ let package = Package(
             name: "Networking",
             dependencies: [
                 "Alamofire",
-                "Extension"
+                "Extension",
             ],
             path: "Networking"
-        )
+        ),
+        .target(
+            name: "Zoomable",
+            dependencies: [
+                "Extension",
+            ],
+            path: "Zoomable"
+        ),
     ]
 )

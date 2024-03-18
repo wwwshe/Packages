@@ -7,7 +7,7 @@ public extension UITextView {
     func addDoneToolbar(onDone: (target: Any, action: Selector)? = nil) {
         let onDone = onDone ?? (target: self, action: #selector(doneButtonTapped))
 
-        let toolbar: UIToolbar = UIToolbar()
+        let toolbar = UIToolbar()
         toolbar.barStyle = .default
         toolbar.items = [
             UIBarButtonItem(
@@ -20,16 +20,16 @@ public extension UITextView {
                 style: .done,
                 target: onDone.target,
                 action: onDone.action
-            )
+            ),
         ]
         toolbar.sizeToFit()
 
-        self.inputAccessoryView = toolbar
+        inputAccessoryView = toolbar
     }
-    
+
     func addNextToolbar(onNext: (target: Any, action: Selector)? = nil) {
         let onNext = onNext ?? (target: self, action: #selector(nextButtonTap))
-        let toolbar: UIToolbar = UIToolbar()
+        let toolbar = UIToolbar()
         toolbar.barStyle = .default
         let nextButton = UIBarButtonItem(
             title: "다음",
@@ -37,23 +37,23 @@ public extension UITextView {
             target: onNext.target,
             action: onNext.action
         )
-        nextButton.tag = self.tag
+        nextButton.tag = tag
         toolbar.items = [
             UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil),
-            nextButton
+            nextButton,
         ]
         toolbar.sizeToFit()
 
-        self.inputAccessoryView = toolbar
+        inputAccessoryView = toolbar
     }
 
     // Default actions:
-    @objc func doneButtonTapped() { self.resignFirstResponder() }
-    
+    @objc func doneButtonTapped() { resignFirstResponder() }
+
     @IBAction func nextButtonTap(sender: Any) {
         if let item = sender as? UIBarButtonItem {
             let tag = item.tag
-            self.nextResponder(viewTag: tag)
+            nextResponder(viewTag: tag)
         }
     }
 }

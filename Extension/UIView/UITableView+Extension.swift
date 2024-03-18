@@ -9,11 +9,11 @@ import UIKit
 
 public extension UITableView {
     func register(cell: UITableViewCell.Type) {
-        self.register(cell,
-                      forCellReuseIdentifier: cell.className)
+        register(cell,
+                 forCellReuseIdentifier: cell.className)
     }
-    
+
     func reusableCell<T: UITableViewCell>(cell: T.Type) -> T? {
-        return self.dequeueReusableCell(withIdentifier: cell.className) as? T
+        return dequeueReusableCell(withIdentifier: cell.className) as? T
     }
 }

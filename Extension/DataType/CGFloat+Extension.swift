@@ -1,6 +1,6 @@
 //
 //  CGFloat+Extension.swift
-//  
+//
 //
 
 import Foundation

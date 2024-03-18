@@ -1,6 +1,6 @@
 //
 //  UISwitch+Extension.swift
-//  
+//
 //
 //  Created by jjw-Macbook Pro on 2023/04/05.
 //
@@ -10,7 +10,6 @@ import UIKit
 
 public extension UISwitch {
     func set(width: CGFloat, height: CGFloat) {
-
         let standardHeight: CGFloat = 31
         let standardWidth: CGFloat = 51
 

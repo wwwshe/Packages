@@ -1,6 +1,6 @@
 //
 //  UIImage+Extension.swift
-//  
+//
 //
 //  Created by jun wook on 2023/07/15.
 //
@@ -17,17 +17,17 @@ public extension UIImage {
     class func imageWithColor(_ color: UIColor, size: CGSize) -> UIImage {
         UIGraphicsBeginImageContext(size)
         let context = UIGraphicsGetCurrentContext()
-        
+
         context?.setFillColor(color.cgColor)
         let rect = CGRect(origin: CGPoint.zero, size: size)
         context?.fill(rect)
-        
+
         let image = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
-        
+
         return image!
     }
-    
+
     func image(alpha: CGFloat) -> UIImage? {
         UIGraphicsBeginImageContextWithOptions(size, false, scale)
         draw(at: .zero, blendMode: .normal, alpha: alpha)
@@ -35,32 +35,33 @@ public extension UIImage {
         UIGraphicsEndImageContext()
         return newImage
     }
-    
+
     /// 썸네일
     func thumbnail() -> UIImage? {
-        guard let imageData = self.pngData() else { return nil }
-        
+        guard let imageData = pngData() else { return nil }
+
         let options = [
             kCGImageSourceCreateThumbnailWithTransform: true,
             kCGImageSourceCreateThumbnailFromImageAlways: true,
-            kCGImageSourceThumbnailMaxPixelSize: 150] as CFDictionary
-        
+            kCGImageSourceThumbnailMaxPixelSize: 150,
+        ] as CFDictionary
+
         guard let source = CGImageSourceCreateWithData(imageData as CFData, nil) else { return nil }
         guard let imageReference = CGImageSourceCreateThumbnailAtIndex(source, 0, options) else { return nil }
-        
+
         return UIImage(cgImage: imageReference)
     }
 }
 
 public extension UIImage {
     enum JPEGQuality: CGFloat {
-        case lowest  = 0.1
-        case low     = 0.25
-        case medium  = 0.5
-        case high    = 0.75
+        case lowest = 0.1
+        case low = 0.25
+        case medium = 0.5
+        case high = 0.75
         case highest = 1
     }
-    
+
     /// Returns the data for the specified image in JPEG format.
     /// If the image object’s underlying image data has been purged, calling this function forces that data to be reloaded into memory.
     /// - returns: A data object containing the JPEG data, or nil if there was a problem generating the data. This function may return nil if the image has no data or if the underlying CGImageRef contains data in an unsupported bitmap format.
@@ -73,15 +74,14 @@ public extension UIImage {
     enum DataUnits: String {
         case byte, kilobyte, megabyte, gigabyte
     }
-    
+
     func getSizeIn(_ type: DataUnits) -> String {
-        
-        guard let data = self.pngData() else {
+        guard let data = pngData() else {
             return ""
         }
-        
-        var size: Double = 0.0
-        
+
+        var size = 0.0
+
         switch type {
         case .byte:
             size = Double(data.count)
@@ -92,13 +92,13 @@ public extension UIImage {
         case .gigabyte:
             size = Double(data.count) / 1024 / 1024 / 1024
         }
-        
+
         return String(format: "%.2f", size)
     }
 }
 
 public extension UIImage {
-    class func getColoredRectImageWith(color: CGColor, andSize size: CGSize) -> UIImage{
+    class func getColoredRectImageWith(color: CGColor, andSize size: CGSize) -> UIImage {
         UIGraphicsBeginImageContextWithOptions(size, false, 0.0)
         let graphicsContext = UIGraphicsGetCurrentContext()
         graphicsContext?.setFillColor(color)

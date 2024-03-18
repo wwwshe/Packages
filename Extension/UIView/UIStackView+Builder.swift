@@ -16,6 +16,7 @@ public extension UIStackView {
 }
 
 // MARK: AddArrangeViewBuilder
+
 public extension UIStackView {
     @resultBuilder
     struct AddArrangeViewBuilder {
@@ -23,9 +24,9 @@ public extension UIStackView {
             components
         }
     }
-    
+
     func addArrangedSubviews(@AddArrangeViewBuilder views: () -> [UIView]) {
-        views().forEach { view in
+        for view in views() {
             addArrangedSubview(view)
         }
     }

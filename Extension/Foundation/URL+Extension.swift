@@ -10,7 +10,8 @@ public extension URL {
     var parameters: [String: String] {
         var parameters = [String: String]()
         if let urlComponents = URLComponents(url: self, resolvingAgainstBaseURL: false),
-            let queryItems = urlComponents.queryItems {
+           let queryItems = urlComponents.queryItems
+        {
             for queryItem in queryItems where queryItem.value != nil {
                 parameters[queryItem.name] = queryItem.value
             }

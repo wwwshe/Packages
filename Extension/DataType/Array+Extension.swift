@@ -1,6 +1,6 @@
 //
 //  Array+Extension.swift
-//  
+//
 //
 
 import Foundation
@@ -10,9 +10,9 @@ public extension Array {
         guard indices.contains(index) else { return nil }
         return self[index]
     }
-    
+
     var isNotEmpty: Bool {
-        self.isEmpty == false
+        isEmpty == false
     }
 }
 
@@ -25,7 +25,7 @@ public extension Array where Element: Equatable {
 }
 
 public extension Collection {
-    subscript (safe index: Index) -> Element? {
+    subscript(safe index: Index) -> Element? {
         return indices.contains(index) ? self[index] : nil
     }
 }

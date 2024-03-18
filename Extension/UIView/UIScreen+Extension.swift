@@ -18,11 +18,11 @@ public extension UIScreen {
             return UIScreen.main
         }
     }
-    
+
     static var screenSize: CGRect {
         return screen.bounds
     }
-    
+
     static var screenScale: CGFloat {
         return screen.scale
     }

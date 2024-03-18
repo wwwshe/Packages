@@ -1,6 +1,6 @@
 //
 //  Formatters.swift
-//  
+//
 //
 
 import Foundation
@@ -8,7 +8,7 @@ import Foundation
 public let krDateFormatter: DateFormatter = {
     let formatter = DateFormatter()
     formatter.locale = Locale.korea
-    formatter.timeZone = TimeZone.init(abbreviation: "KST")
+    formatter.timeZone = TimeZone(abbreviation: "KST")
     return formatter
 }()
 
@@ -21,6 +21,6 @@ public let krNumberFormatter: NumberFormatter = {
 public let enDateFormatter: DateFormatter = {
     let formatter = DateFormatter()
     formatter.locale = Locale.korea
-    formatter.timeZone = TimeZone.init(abbreviation: "UTC")
+    formatter.timeZone = TimeZone(abbreviation: "UTC")
     return formatter
 }()

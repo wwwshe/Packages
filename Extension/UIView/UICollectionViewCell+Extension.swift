@@ -1,6 +1,6 @@
 //
 //  UICollectionViewCell+Extension.swift
-//  
+//
 //
 //  Created by jjw-MAC-PC on 2021/10/26.
 //
@@ -11,19 +11,20 @@ public extension UICollectionViewCell {
     static var reuseCellName: String {
         return "\(String(describing: self))"
     }
-    
+
     static func reuseCell(_ collectionView: UICollectionView, _ indexPath: IndexPath) -> Self {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Self.reuseCellName,
-                                                            for: indexPath) as? Self else {
-           fatalError()
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseCellName,
+                                                            for: indexPath) as? Self
+        else {
+            fatalError()
         }
         return cell
     }
-    
+
     func calculatetCellSize(cellHeight: CGFloat) -> CGSize {
         let targetSize = CGSize(width: UIView.layoutFittingCompressedSize.width, height: cellHeight)
-        
-        return self.contentView.systemLayoutSizeFitting(
+
+        return contentView.systemLayoutSizeFitting(
             targetSize,
             withHorizontalFittingPriority: .fittingSizeLevel,
             verticalFittingPriority: .required

@@ -1,17 +1,17 @@
 //
 //  NiblessUIView.swift
-//  
+//
 //
 
 import UIKit
 
 open class NiblessUIView: UIView {
-    public override init(frame: CGRect) {
+    override public init(frame: CGRect) {
         super.init(frame: frame)
     }
-    
+
     @available(*, unavailable)
-    public required init?(coder: NSCoder) {
+    public required init?(coder _: NSCoder) {
         fatalError()
     }
 }

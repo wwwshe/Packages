@@ -1,5 +1,5 @@
 //
-//  ScrollView+Extension.swift
+//  UIScrollView+Extension.swift
 //
 //  Created by jjw-MAC-PC on 2020/11/03.
 //
@@ -20,7 +20,7 @@ public extension UIScrollView {
             setContentOffset(bottomOffset, animated: animated)
         }
     }
-    
+
     /// 스크롤뷰 중간 위치로 이동
     func scrollToCenterY(animated: Bool = true) {
         let centerY = scrollBottomOffset().y / 2
@@ -31,10 +31,10 @@ public extension UIScrollView {
         return CGPoint(x: 0, y: contentSize.height - bounds.size.height + contentInset.bottom)
     }
 
-    func animateScrollToTop(duration: TimeInterval, animated: Bool = false, completion: @escaping (() -> Void) ) {
+    func animateScrollToTop(duration: TimeInterval, animated: Bool = false, completion: @escaping (() -> Void)) {
         UIView.animate(withDuration: duration) { [weak self] in
             self?.setContentOffset(.zero, animated: animated)
-        } completion: { (isComplete) in
+        } completion: { isComplete in
             guard isComplete else { return }
             completion()
         }

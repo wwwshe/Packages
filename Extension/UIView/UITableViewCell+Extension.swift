@@ -11,19 +11,21 @@ public extension UITableViewCell {
     static var reuseCellName: String {
         return "\(String(describing: self))"
     }
-    
+
     static func reuseCell(_ tableView: UITableView) -> Self {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: Self.reuseCellName)
-                as? Self else {
-           fatalError()
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: reuseCellName)
+            as? Self
+        else {
+            fatalError()
         }
         return cell
     }
-    
+
     static func reuseCell(_ tableView: UITableView, _ indexPath: IndexPath) -> Self {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: Self.reuseCellName, for: indexPath)
-                as? Self else {
-           fatalError()
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: reuseCellName, for: indexPath)
+            as? Self
+        else {
+            fatalError()
         }
         return cell
     }
