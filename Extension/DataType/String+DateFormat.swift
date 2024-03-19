@@ -32,6 +32,12 @@ public extension String {
         df.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
         return df.date(from: self) ?? yyyymmddthhmmssZ
     }
+    /// ex) "2021-08-17T05:50:18.589Z"
+    var isoDate: Date? {
+        // DateFormatter 인스턴스 생성
+        let dateFormatter = ISO8601DateFormatter()
+        return dateFormatter.date(from: self)
+    }
 
     /// from date format -> to date format 변환
     func changeDateFormat(from: String, to: String) -> String {
