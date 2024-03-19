@@ -19,24 +19,33 @@ public extension String {
         return dateFormatter.date(from: value)
     }
 
-    /// ex: 2016-06-23T09:07:21-07:00
+    /// ex: 2024-03-19T15:30:00Z
     var yyyymmddthhmmssZ: Date? {
         let df = krDateFormatter
         df.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ"
         return df.date(from: self)
     }
 
-    /// ex: 2016-06-23 09:07:21.205-07:00
+    /// ex: 2024-03-19T14:30:00.000+0530
     var yyyymmddthhmmss: Date? {
         let df = krDateFormatter
         df.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
-        return df.date(from: self) ?? yyyymmddthhmmssZ
+        return df.date(from: self)
     }
+    
+    /// ex: 2016-06-23 09:07:21.205-07:00
+    var yyyymmddthhmmssDash: Date? {
+        let df = krDateFormatter
+        df.dateFormat = "yyyy-MM-dd'T'HH:mm:ss-SSSZ"
+        return df.date(from: self)
+    }
+    
     /// ex) "2021-08-17T05:50:18.589Z"
-    var isoDate: Date? {
+    var yyyymmddthhmmsssssz: Date? {
         // DateFormatter 인스턴스 생성
-        let dateFormatter = ISO8601DateFormatter()
-        return dateFormatter.date(from: self)
+        let df = DateFormatter()
+        df.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
+        return df.date(from: self)
     }
 
     /// from date format -> to date format 변환
