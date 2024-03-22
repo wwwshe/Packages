@@ -70,6 +70,12 @@ let package = Package(
                 "RxApplifecycle",
             ]
         ),
+        .library(
+            name: "CustomFoundation",
+            targets: [
+                "CustomFoundation",
+            ]
+        ),
     ],
     dependencies: [
         .package(
@@ -86,7 +92,11 @@ let package = Package(
         ),
         .package(
             url: "https://github.com/ReactiveX/RxSwift",
-            exact: "6.0.0"
+            .upToNextMajor(from: "6.0.0")
+        ),
+        .package(
+            url: "https://github.com/krzyzanowskim/CryptoSwift",
+            .upToNextMajor(from: "1.8.0")
         ),
     ],
     targets: [
@@ -158,6 +168,13 @@ let package = Package(
                 .product(name: "RxCocoa", package: "RxSwift")
             ],
             path: "RxApplifecycle"
+        ),
+        .target(
+            name: "CustomFoundation",
+            dependencies: [
+                "CryptoSwift"
+            ],
+            path: "CustomFoundation"
         ),
     ]
 )
