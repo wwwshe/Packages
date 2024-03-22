@@ -64,19 +64,29 @@ let package = Package(
                 "Zoomable",
             ]
         ),
+        .library(
+            name: "RxApplifecycle",
+            targets: [
+                "RxApplifecycle",
+            ]
+        ),
     ],
     dependencies: [
         .package(
             url: "https://github.com/evgenyneu/keychain-swift.git",
-            exact: "19.0.0"
+            .upToNextMajor(from: "19.0.0")
         ),
         .package(
             url: "https://github.com/SnapKit/SnapKit.git",
-            exact: "5.0.1"
+            .upToNextMajor(from: "5.0.0")
         ),
         .package(
             url: "https://github.com/Alamofire/Alamofire",
-            exact: "5.0.0"
+            .upToNextMajor(from: "5.0.0")
+        ),
+        .package(
+            url: "https://github.com/ReactiveX/RxSwift",
+            exact: "6.0.0"
         ),
     ],
     targets: [
@@ -140,6 +150,14 @@ let package = Package(
                 "Extension",
             ],
             path: "Zoomable"
+        ),
+        .target(
+            name: "RxApplifecycle",
+            dependencies: [
+                "RxSwift",
+                .product(name: "RxCocoa", package: "RxSwift")
+            ],
+            path: "RxApplifecycle"
         ),
     ]
 )
