@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Extensions
 
 public extension UITableView {
     func register(cell: UITableViewCell.Type) {

@@ -29,9 +29,15 @@ let package = Package(
             ]
         ),
         .library(
-            name: "Extension",
+            name: "Extensions",
             targets: [
-                "Extension",
+                "Extensions",
+            ]
+        ),
+        .library(
+            name: "UIExtensions",
+            targets: [
+                "UIExtensions",
             ]
         ),
         .library(
@@ -121,11 +127,18 @@ let package = Package(
             path: "DataUtility"
         ),
         .target(
-            name: "Extension",
+            name: "Extensions",
+            dependencies: [
+            ],
+            path: "Extensions"
+        ),
+        .target(
+            name: "UIExtensions",
             dependencies: [
                 "SnapKit",
+                "Extensions"
             ],
-            path: "Extension"
+            path: "UIExtensions"
         ),
         .target(
             name: "LocalData",
@@ -150,14 +163,14 @@ let package = Package(
             name: "Networking",
             dependencies: [
                 "Alamofire",
-                "Extension",
+                "Extensions",
             ],
             path: "Networking"
         ),
         .target(
             name: "Zoomable",
             dependencies: [
-                "Extension",
+                "Extensions",
             ],
             path: "Zoomable"
         ),
