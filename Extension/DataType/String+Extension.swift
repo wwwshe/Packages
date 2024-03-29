@@ -98,7 +98,7 @@ public extension String {
         "ㄱ", "ㄲ", "ㄴ", "ㄷ", "ㄸ", "ㄹ", "ㅁ", "ㅂ", "ㅃ", "ㅅ", "ㅆ", "ㅇ", "ㅈ", "ㅉ", "ㅊ", "ㅋ", "ㅌ", "ㅍ", "ㅎ",
     ]
 
-    /// 초성만 분리하여 리턴 ex) 김재한 -> ㄱㅈㅎ
+    /// 초성만 분리하여 리턴 ex) 홍길동 -> ㅎㄱㄷ
     func getInitString() -> String {
         var resultString = String()
 

@@ -59,20 +59,6 @@ public extension UIView {
     class func duration(distance: CGFloat) -> TimeInterval {
         return TimeInterval(abs(distance) * (0.3 / 281.0))
     }
-
-    func roundCorners(corners: UIRectCorner, radius: CGFloat) {
-        let path = UIBezierPath(roundedRect: bounds, byRoundingCorners: corners, cornerRadii: CGSize(width: radius, height: radius))
-        let mask = CAShapeLayer()
-        mask.path = path.cgPath
-        layer.mask = mask
-    }
-
-    /// 요걸 써야 뷰 하단이 안짤림
-    func newRoundCorners(masks: CACornerMask, radius _: CGFloat) {
-        clipsToBounds = true
-        layer.cornerRadius = 20
-        layer.maskedCorners = masks
-    }
 }
 
 public extension NSLayoutConstraint {
