@@ -90,4 +90,38 @@ public extension UIView {
             equalTo: to, constant: constant
         ).isActive = true
     }
+    
+    func width(
+        _ to: NSLayoutAnchor<NSLayoutDimension>? = nil,
+        constant: CGFloat = 0
+    ) {
+        setTranslates()
+        if let to = to {
+            widthAnchor.constraint(
+                equalTo: to,
+                constant: constant
+            ).isActive = true
+        } else {
+            widthAnchor.constraint(
+                equalToConstant: constant
+            ).isActive = true
+        }
+    }
+    
+    func height(
+        _ to: NSLayoutAnchor<NSLayoutDimension>? = nil,
+        constant: CGFloat = 0
+    ) {
+        setTranslates()
+        if let to = to {
+            heightAnchor.constraint(
+                equalTo: to,
+                constant: constant
+            ).isActive = true
+        } else {
+            heightAnchor.constraint(
+                equalToConstant: constant
+            ).isActive = true
+        }
+    }
 }

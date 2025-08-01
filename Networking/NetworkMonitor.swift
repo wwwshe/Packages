@@ -6,7 +6,7 @@
 //
 
 import Alamofire
-import Extension
+import Extensions
 import Foundation
 import OSLog
 

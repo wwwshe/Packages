@@ -71,6 +71,12 @@ let package = Package(
             ]
         ),
         .library(
+            name: "ImageCache",
+            targets: [
+                "ImageCache",
+            ]
+        ),
+        .library(
             name: "RxApplifecycle",
             targets: [
                 "RxApplifecycle",
@@ -136,7 +142,7 @@ let package = Package(
             name: "UIExtensions",
             dependencies: [
                 "SnapKit",
-                "Extensions"
+                "Extensions",
             ],
             path: "UIExtensions"
         ),
@@ -175,17 +181,24 @@ let package = Package(
             path: "Zoomable"
         ),
         .target(
+            name: "ImageCache",
+            dependencies: [
+                "Extensions",
+            ],
+            path: "ImageCache"
+        ),
+        .target(
             name: "RxApplifecycle",
             dependencies: [
                 "RxSwift",
-                .product(name: "RxCocoa", package: "RxSwift")
+                .product(name: "RxCocoa", package: "RxSwift"),
             ],
             path: "RxApplifecycle"
         ),
         .target(
             name: "CustomFoundation",
             dependencies: [
-                "CryptoSwift"
+                "CryptoSwift",
             ],
             path: "CustomFoundation"
         ),
