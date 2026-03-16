@@ -5,7 +5,8 @@
 //  Created by jun wook on 3/18/24.
 //
 
-import Extension
+import Extensions
+import UIExtensions
 import Foundation
 import UIKit
 

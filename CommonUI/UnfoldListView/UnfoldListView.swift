@@ -8,7 +8,7 @@ import Foundation
 import UIKit
 import SnapKit
 import RxSwift
-import RxGesture
+import RxCocoa
 
 class UnfoldListView: UIView {
     enum Metric {
@@ -69,11 +69,14 @@ class UnfoldListView: UIView {
     private func bind() {
         for i in 0..<childViews.count {
             let view = childViews[i]
-            view.rx.tapGesture()
-                .when(.recognized)
+            let tapGesture = UITapGestureRecognizer()
+            view.addGestureRecognizer(tapGesture)
+            view.isUserInteractionEnabled = true
+            
+            tapGesture.rx.event
                 .subscribe(onNext: { [weak self] _ in
                     guard let self = self else { return }
-                    selectView(index: i)
+                    self.selectView(index: i)
                 })
                 .disposed(by: disposeBag)
         }

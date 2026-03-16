@@ -1,0 +1,8 @@
+### SwiftPM build artifacts
+.build/
+
+### SwiftPM Xcode integration files
+.swiftpm/xcode/xcuserdata/
+**/.swiftpm/xcode/package.xcworkspace/
+**/IDEWorkspaceChecks.plist
+
